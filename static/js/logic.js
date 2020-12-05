@@ -15,7 +15,7 @@ var map = L.map("mapid", {
 });
 lightmap.addTo(map);
 
-var json_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+var json_url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson"
 d3.json(json_url, function(data){
     function styleMap (feature){
         return {
@@ -91,7 +91,7 @@ d3.json(json_url, function(data){
             "#ea2c2c"
         ];
         for (var i = 0; i<depths.length; i++){
-            div.innerHTML += "<i style = 'background:"+ colors[i] + "'></i>"
+            div.innerHTML += "<br><i style = 'background:"+ colors[i] + "'></i>"
             + depths[i] + (depths [i+1] ? "&ndash;"+ depths[i+1]+ "<br>":"+");
         }
         return div;
